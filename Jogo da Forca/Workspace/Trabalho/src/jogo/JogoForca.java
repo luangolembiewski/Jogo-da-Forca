@@ -76,8 +76,8 @@ public class JogoForca {
 				ex.printStackTrace();
 			}
 
-			valor = aleatorio.nextInt(8); // escolhe um numero aleatório entre 0 e 7
-			String palavra = (String) (palavras.get(valor)); // escolhe uma palavra aleatória entre 8
+			valor = aleatorio.nextInt(8); // escolhe um numero aleatÃ³rio entre 0 e 7
+			String palavra = (String) (palavras.get(valor)); // escolhe uma palavra aleatÃ³ria entre 8
 
 			String[] palavraArray = palavra.split(" ");
 
@@ -112,13 +112,15 @@ public class JogoForca {
 				System.out.println("Digite uma letra");
 				letra = leia.next();
 				System.out.println("===============================================");
+				letra = letra.toUpperCase();
 
 				while (letrasDigitadas.contains(letra)) {
 					System.out.println("Letra repetida!");
 					System.out.println("Digite novamente:");
 					letra = leia.next();
+					letra = letra.toUpperCase();
 				}
-				letra = letra.toUpperCase();
+				
 				letrasDigitadas = letrasDigitadas + ". " + letra;
 				posicaoLetra = "";
 				List<Integer> posicaoLetraInt = new ArrayList<Integer>();
@@ -212,7 +214,7 @@ public class JogoForca {
 				resultado = ("PERDEU");
 			} else if (acerto == palavraArray.length) {
 				System.out.println("======================================");
-				System.out.println("    PARABÉNS " + jogador.toUpperCase() + ", VOCÊ GANHOU!!");
+				System.out.println("    PARABÃ‰NS " + jogador.toUpperCase() + ", VOCÃŠ GANHOU!!");
 				resultado = ("GANHOU");
 			}
 			System.out.println("======================================");
@@ -267,7 +269,7 @@ public class JogoForca {
 					System.out.println(jogadas.getName() + " removido com sucesso!");
 					System.out.println(arquivoPalavras.getName() + " removido com sucesso!");
 				} else {
-					System.out.println("Erro na remoção!");
+					System.out.println("Erro na remoÃ§Ã£o!");
 				}
 
 			} catch (Exception ex) {
